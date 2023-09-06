@@ -69,6 +69,7 @@ func (s *httpServer) handleProduce(w http.ResponseWriter, r *http.Request) {
 
 func (s *httpServer) handleConsume(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
+
 	var req ConsumeRequest
 	err := json.NewDecoder(r.Body).Decode(&req)
 	if err != nil {
