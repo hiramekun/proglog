@@ -63,6 +63,10 @@ func (i *index) isMaxed() bool {
 	return uint64(len(i.mmap)) < i.size+entWidth
 }
 
+func (i *index) Name() string {
+	return i.file.Name()
+}
+
 func neswIndex(f *os.File, c Config) (*index, error) {
 	idx := &index{
 		file: f,
