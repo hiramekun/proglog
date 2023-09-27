@@ -5,9 +5,8 @@ init:
 
 .PHONY: gencert
 gencert:
-    cfssl gencert \
+	cfssl gencert \
 		-initca test/ca-csr.json | cfssljson -bare ca
-
 	cfssl gencert \
 	    -ca=ca.pem \
 		-ca-key=ca-key.pem \
